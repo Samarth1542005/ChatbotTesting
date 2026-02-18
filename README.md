@@ -56,8 +56,8 @@ Key highlights:
                                                                        ▼
                                                             ┌──────────────────────┐
                                                             │  Google Gemini AI    │
-                                                            │  (gemini-2.5-flash-  │
-                                                            │   lite)              │
+                                                            │  (gemini-2.5-flash)  │
+                                                            │                      │
                                                             └──────────────────────┘
 ```
 
@@ -73,7 +73,7 @@ Key highlights:
 | ---------- | ------------------------------------------------------------- |
 | Frontend   | React 19, Vite 7, Axios                                      |
 | Backend    | Node.js, Express 5                                            |
-| AI Model   | Google Gemini 2.5 Flash Lite (`@google/generative-ai` SDK)    |
+| AI Model   | Google Gemini 2.5 Flash (`@google/generative-ai` SDK)    |
 | Styling    | Pure CSS (dark theme, responsive)                             |
 | Dev Tools  | ESLint, dotenv                                                |
 
@@ -156,7 +156,7 @@ Key highlights:
 3. When a chat request arrives:
    - The system prompt is injected as the first exchange in the conversation history.
    - Previous user/model messages are included to maintain context.
-   - The full history is sent to **Google Gemini 2.5 Flash Lite** via `startChat()`.
+   - The full history is sent to **Google Gemini 2.5 Flash** via `startChat()`.
    - The model generates a response, which is returned as JSON `{ reply: "..." }`.
 4. **Error handling**:
    - `429` rate-limit errors return a friendly "high traffic" message.
@@ -330,7 +330,7 @@ Edit or create a `faq.json` file with the following structure:
     "tech_stack": {
       "frontend": ["React", "Vite"],
       "backend": ["Node.js", "Express"],
-      "ai_model": "Gemini 2.5 Flash Lite"
+      "ai_model": "Gemini 2.5 Flash"
     }
   },
   "faq": [
@@ -346,9 +346,9 @@ Edit or create a `faq.json` file with the following structure:
 ### Changing the AI Model
 In `chatController.js`, update the model name:
 ```js
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 ```
-You can use any available Gemini model (e.g., `gemini-2.0-flash`, `gemini-1.5-pro`, etc.).
+You can use any available Gemini model (e.g., `gemini-2.5-flash-lite`, `gemini-2.0-flash`, `gemini-1.5-pro`, etc.).
 
 ### Styling
 - **Chat popup appearance**: Edit `Frontend/src/App.css`

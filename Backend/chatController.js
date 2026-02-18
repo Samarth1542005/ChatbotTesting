@@ -72,7 +72,7 @@ export async function handleChat(req, res) {
     }
     console.log('Processing helpdesk query:', message.substring(0, 80));
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
     const chatHistory = (history || []).map((msg) => ({
       role: msg.role,
